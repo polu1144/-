@@ -1,0 +1,93 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+	int n;
+	int player; 
+	int com1; 
+	int com2;
+
+	srand((unsigned int)time(NULL)); 
+
+	do
+	{
+		printf("(グー:1 チョキ:2 パー:3) >");
+		scanf_s("%d", &player);
+
+		com1 = rand() % 3+1 ;
+		com2 = rand() % 3+1 ;
+		//あいこ
+		if (player==com1==com2) {
+			printf("相思相愛\n");
+		}
+		//プレイヤー固定
+		else if (player==1&&com1==1&&com2==2) {
+			printf("プレイヤー、COM1もグーで勝利、ＣＯＭ2がチョキで敗北\n\n");
+		}
+		else if (player == 1 && com1 == 1 && com2 == 3) {
+			printf("ＣＯＭ2がパーで勝利、プレイヤー、ＣＯＭ1もグーで敗北\n\n");
+		}
+		else if (player == 1 && com1 == 2 && com2 == 1) {
+			printf("プレイヤー、ＣＯＭ2がグーで勝利、ＣＯＭ1がチョキで敗北\n\n");
+		}
+		else if (player == 1 && com1 == 3 && com2 == 1) {
+			printf("ＣＯＭ1がパーで勝利、プレイヤー、ＣＯＭ2がグーで敗北\n\n");
+		}
+		else if (player == 1 && com1 == 2 && com2 == 2) {
+			printf("プレイヤーがグーで勝利、ＣＯＭ1、ＣＯＭ2がチョキで敗北\n\n");
+		}
+		else if (player == 1 && com1 == 3 && com1 == 3) {
+			printf("ＣＯＭ1、ＣＯＭ2がパーで勝利、プレイヤーがグーで敗北\n\n");
+		}
+		//COM1固定
+		else if (player == 2 && com1 == 1 && com2 == 1) {
+			printf("ＣＯＭ1、ＣＯＭ2がグーで勝利、プレイヤーがチョキで敗北\n\n");
+		}
+		else if (player == 3 && com1 == 1 && com2 == 1) {
+			printf("プレイヤーがパーで勝利、ＣＯＭ1、ＣＯＭ2がグーで敗北\n\n");
+		}
+		else if (player == 2 && com1 == 1 && com2 == 2) {
+			printf("ＣＯＭ1がグーで勝利、プレイヤー、ＣＯＭ2がチョキで敗北\n\n");
+		}
+		else if (player == 3 && com1 == 1 && com2 == 3) {
+			printf("プレイヤー、ＣＯＭ2がパーで勝利、ＣＯＭ1がグーで敗北\n\n");
+		}
+		//ＣＯＭ2固定
+		else if (player == 2 && com1 == 2 && com1 == 1) {
+			printf("ＣＯＭ1がグー勝利、プレイヤー、ＣＯＭ1がチョキで敗北\n\n");
+		}
+		else if (player == 3 && com1 == 3 && com2 == 1) {
+			printf("プレイヤー、ＣＯＭ1がパーで勝利、ＣＯＭ2がグーで敗北\n\n");
+		}
+		//チョキが勝って、パーが勝つコード
+		else if (player == 2 && com1 == 3 && com2 == 3) {
+			printf("プレイヤーがチョキで勝利、ＣＯＭ1、ＣＯＭ2がパーで敗北\n\n");
+		}
+		else if (player == 3 && com1 == 2 && com2 == 3) {
+			printf("ＣＯＭ1がチョキで勝利、プレイヤー、ＣＯＭ2がパーで敗北\n\n");
+		}
+		else if (player == 3 && com1 == 3 && com2 == 2) {
+			printf("ＣＯＭ2がチョキで勝利、プレイヤー、ＣＯＭ1がパーで敗北\n\n");
+		}
+		else if (player == 2 && com1 == 3 && com2 == 2) {
+			printf("プレイヤー、ＣＯＭ2がチョキで勝利、ＣＯＭ1がパーで敗北\n\n");
+		}
+		else if (player == 3 && com1 == 2 && com2 == 2) {
+			printf("ＣＯＭ1、ＣＯＭ2がチョキで勝利、プレイヤーがパーで敗北\n\n");
+		}
+		else if (player == 2 && com1 == 2 && com2 == 3) {
+			printf("プレイヤー、ＣＯＭ1がチョキで勝利、ＣＯＭ2がパーで敗北\n\n");
+		}
+		else {
+			printf("みんな違ってみんないい\n\n");
+		}
+		printf("このまま続けますか？続ける場合は0以外の数字を入力、続けない場合は0を入力　> ");
+		scanf_s("%d", &n);
+		printf("\n");
+
+	} while (n != 0);
+
+	return 0;
+}
